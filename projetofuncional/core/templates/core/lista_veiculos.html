@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<ul class="list-group list-group-horizontal">
+    {% for i in dados %}
+        Cliente: {{ i.id_cliente }} <br>
+        Fabricante: {{ i.id_fabricante }} <br>
+        Placa: {{ i.placa }} <br>
+
+        {% if i.modelo %}
+            Modelo: {{ i.modelo }} <br>
+        {% else %}
+            Modelo:  <br>
+        {% endif %}
+
+        {% if i.cor %}
+            Cor: {{ i.cor }}<br>
+        {% else %}
+            Cor: <br>
+        {% endif %}
+
+        {% if i.ano %}
+            Ano: {{ i.ano }} <br>
+        {% else %}
+            Ano: <br>
+        {% endif %}
+
+        {% if i.foto %}
+            <img src="{{ i.foto.url }}" width="200"> <br>
+        {% else %}
+            <img src="{% static 'img/veiculo_generico.png' %}" width="200"> <br>
+        {% endif %}
+        <a href="/altera_veiculo/{{ i.id }}/"><i class="fa fa-edit"></i></a>
+        <a href="/exclui_veiculo/{{ i.id }}"><i class="fa fa-trash"style="font-size:30px;color:red"></i></a>
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+ <body bgcolor="FFD700">
+<h3> Dados de {{ objeto }} salvos! </h3>
+<button onclick=" location.href= '{{ url }}'" type="button" >OK</button>
+{% endblock %}

@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+ <body bgcolor="000000">
+    <h3>Lista de Mensalistas</h3>
+
+   {% for i in dados %}
+
+      Cliente: {{ i.id_cliente }}<br>
+      Valor:  {{ i.id_tabela }}<br>
+      Vencimento: {{ i.dia_vencimento }}<br>
+      {% if i.em_pendencia %}
+          Dentro do prazo:<strong>  Em aberto</strong><br>
+      {% else %}
+          Dentro do prazo: OK<br>
+      {% endif %}
+      Forma de pagamento: {{i.forma_pagamento}}<br>
+      <a href="/alterar_mensalista/{{i.id }}/"><i class="fa fa-edit"></i></a>
+   {% endfor %}
+
+
+{% endblock %}
+
+
+

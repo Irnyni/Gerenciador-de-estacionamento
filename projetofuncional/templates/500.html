@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+   <h3>Sua requisição nao pode ser atendida! Tente mais tarde!<h3>
+   Informe o código de erro
+   {% if msg_erro %}
+       <strong> {{msg_erro}} </strong>
+   {%  else %}
+       500
+   {% endif %}
+
+{% endblock %}

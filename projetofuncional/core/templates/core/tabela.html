@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<h3>Tabela de Preços</h3>
+        {% for i in dados %}
+            {{ i.descricao }} : {{i.valor}}<br>
+
+         {% endfor %}
+
+
+<a href="/">Voltar</a>
+{% endblock  %}

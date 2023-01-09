@@ -1,0 +1,13 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+ <body bgcolor="FFD700">
+   <form method="post">
+   <h3> Deseja excluir {{ objeto }}? </h3>
+
+       {% csrf_token %}
+       <button type="submit" > Sim</button>
+       <button type="button" onclick="location.href='{{url}}'" >Não</button>
+   </form>
+{% endblock %}

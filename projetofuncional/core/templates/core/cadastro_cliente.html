@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+ <body bgcolor="FFD700">
+ <p>
+
+<h3>Cadastro de cliente</H3>
+    <form method="post" enctype="multipart/>form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button typ=" sub,it"> Cadastrar<?button></button>
+ </font>
+</p>
+
+{% endblock %}
